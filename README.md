@@ -35,3 +35,10 @@ Actual Result : The password should contain between [6,20] characters!
 8. Afhganisthan is displayed as Afganistam once we register
 9. Agree checkbox is unable to be clicked
 10. Able to submit without email filled
+
+
+# Bugs Found
+
+1. Last name getting truncated 'Sample Last Name' -> 'Sample Last Nam'
+2. Phonenumber incrementing by 1 006655552442 -> 006655552443
+3. Succesfully registered is coming in red color same as error

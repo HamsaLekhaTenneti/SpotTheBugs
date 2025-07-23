@@ -1,29 +1,57 @@
 from playwright.async_api import Page
-from playwright.sync_api import expect
 from page_objects.spot_the_bugs import SpotTheBugs
 
-def test_website_launch(browser: Page):
-    browser.goto("/")
-    expect(browser.get_by_text("Welcome!")).to_be_visible(timeout=10_000)
-
-def test_without_form_details(browser: Page):
-    spot_the_bugs = SpotTheBugs(browser)
-    spot_the_bugs.fill_form_and_submit(
-        first_name="",
-        last_name="",
-        phone="",
-        country="",
-        email="",
-        password=""
-    )
-    
-def test_with_partial_form_details(browser: Page):
-    spot_the_bugs = SpotTheBugs(browser)
-    spot_the_bugs.fill_form_and_submit(
-        first_name="",
-        last_name="",
-        phone="",
+# Always first set valid values
+def set_form_valid_values(spot_the_bugs: SpotTheBugs):
+    """
+    This is to set valid values
+    """
+    spot_the_bugs.set_form_values(
+        first_name="Sample First Name",
+        last_name="Sample Last Name",
+        phone="098877889900",
         country="India",
-        email="",
-        password=""
+        email="dcsdfsf@cdsv.com",
+        password="asdasfefhuweh"
     )
+    return spot_the_bugs
+
+
+def test_with_valid_form_details(browser: Page):
+    """
+    This is to validate form details when all the values are written correctly
+    """
+    spot_the_bugs = SpotTheBugs(browser)
+    spot_the_bugs.set_form_values(
+        first_name="Sample First Name",
+        last_name="Sample Last Name",
+        phone="098877889900",
+        country="India",
+        email="dcsdfsf@cdsv.com",
+        password="asdasfefhuweh"
+    )
+    spot_the_bugs.fill_form()
+    spot_the_bugs.submit_form()
+    spot_the_bugs.validate_success_message()
+    spot_the_bugs.validate_values_with_result()
+
+
+def test_with_invalid_email(browser: Page):
+    spot_the_bugs = SpotTheBugs(browser)
+
+    # With Invalid email
+    spot_the_bugs = set_form_valid_values(spot_the_bugs)
+    spot_the_bugs.email = "ggsggg"
+    spot_the_bugs.fill_form()
+    spot_the_bugs.submit_form()
+    spot_the_bugs.validate_invalid_details()
+
+
+def test_with_invalid_phone(browser: Page):
+    spot_the_bugs = SpotTheBugs(browser)
+
+    spot_the_bugs = set_form_valid_values(spot_the_bugs)
+    spot_the_bugs.phone = "ggahkhdgghshjjj"
+    spot_the_bugs.fill_form()
+    spot_the_bugs.submit_form()
+    spot_the_bugs.validate_invalid_details()
