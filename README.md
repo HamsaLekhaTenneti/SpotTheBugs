@@ -3,20 +3,14 @@ Test Automation Repository for Spot the bugs page
 
 # Test Cases Example
 
-1. Verify Login with Valid credentials
-Precondition: User is registered with user name & password
-Expected Result: User is able to registered successfully
-Actual Result : The password should contain between [6,20] characters!
-
-2. Verify Login with Valid credentials
-Precondition: User is registered with user name & password
-Expected Result: User is able to registered successfully
-Actual Result : The password should contain between [6,20] characters!
-
-2. Verify Login with Valid Email
-Precondition: User is registered with user name & password
-Expected Result: User is able to registered successfully
-Actual Result : The password should contain between [6,20] characters!
+1.Verify all fields with valid data and register
+2.Validate the register form when submitting empty
+3.Submit form without filling mandatory fields
+4.Verify the error when password length is below 6 to maximum 20
+5.Verify the error message when an email address is entered without the @ symbol
+6.Validate the checkbox is enabled or disabled
+7.Validate the password being alphanumeric or not
+8.Validate phone number length
 
 # Bugs
 
@@ -36,6 +30,6 @@ Actual Result : The password should contain between [6,20] characters!
 14. Succesfully registered is coming in red color same as error
 15. Phone Number being Alpha Numeric - Accepting Alphabets
 16. Accepting without Last Name which is mandatory
-17. Acceting without Email which is a mandatory field
+17. Accepting without Email which is a mandatory field
 18. Phone number is having label - LastName
 19. Label Names are inconsistent - Last Name and Email address (Address)
