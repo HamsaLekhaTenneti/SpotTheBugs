@@ -10,7 +10,8 @@ def test_first_name_label(browser: Page):
     spot_the_bugs = SpotTheBugs(browser)
     spot_the_bugs.navigate()
 
+    # Validating some of the Labels
     expect(spot_the_bugs.page.locator('label[for="firstName"]')).to_have_text("First Name")
     expect(spot_the_bugs.page.locator('label[for="lastName"]').nth(0)).to_have_text("Last Name*")
-    expect(spot_the_bugs.page.locator('label[for="phoneNumber"]').nth(1)).to_have_text("Phone number*")
+    expect(spot_the_bugs.page.locator('label[for="phoneNumber"]')).to_have_text("Phone number*")
     expect(spot_the_bugs.page.locator('label[for="exampleInputEmail1"]')).to_have_text("Email address*")

@@ -4,12 +4,19 @@ Test Automation Repository for Spot the bugs page
 # Test Cases Example
 
 1.Verify all fields with valid data and register
+
 2.Validate the register form when submitting empty
+
 3.Submit form without filling mandatory fields
+
 4.Verify the error when password length is below 6 to maximum 20
+
 5.Verify the error message when an email address is entered without the @ symbol
+
 6.Validate the checkbox is enabled or disabled
+
 7.Validate the password being alphanumeric or not
+
 8.Validate phone number length
 
 # Bugs

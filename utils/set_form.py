@@ -11,6 +11,6 @@ def set_form_valid_values(spot_the_bugs: SpotTheBugs):
         phone="098877889900",
         country="India",
         email="dcsdfsf@cdsv.com",
-        password="asdasfefhuweh"
+        password="asdasfefhuweh" # This has to be moved to a file later
     )
     return spot_the_bugs
