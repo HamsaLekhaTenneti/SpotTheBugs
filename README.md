@@ -1,7 +1,7 @@
 # SpotTheBugs
 Test Automation Repository for Spot the bugs page
 
-# Test Cases
+# Test Cases Example
 
 1. Verify Login with Valid credentials
 Precondition: User is registered with user name & password
@@ -13,32 +13,29 @@ Precondition: User is registered with user name & password
 Expected Result: User is able to registered successfully
 Actual Result : The password should contain between [6,20] characters!
 
-3. enter a form with partial details
-4. Enter a text in phone number 
-5. check the spellings in filling form
-6. tick the check box 
-7. Enter a details without mandatory fields
-8. check the password length
-9
-
+2. Verify Login with Valid Email
+Precondition: User is registered with user name & password
+Expected Result: User is able to registered successfully
+Actual Result : The password should contain between [6,20] characters!
 
 # Bugs
 
 1. First Name is not mandatory
 2. Note: All the fields marked with * are mandatory must be at the top of page
-3. Phone Number is accepting alpha numeric
+3. Phone Number is accepting alpha numeric-accepting alphabets
 4. Partially filled form is displaying irrelevant error
-    1. Nothing filled is giving password error
-5. Email is accepted without domain - Like no @ or .com
-6. First and last name is accepting special characters
-7. Phone number - Spelling mistake
-8. Afhganisthan is displayed as Afganistam once we register
-9. Agree checkbox is unable to be clicked
-10. Able to submit without email filled
-
-
-# Bugs Found
-
-1. Last name getting truncated 'Sample Last Name' -> 'Sample Last Nam'
-2. Phonenumber incrementing by 1 006655552442 -> 006655552443
-3. Succesfully registered is coming in red color same as error
+5. Nothing filled is giving password error
+6. Email is accepted without domain - Like no @ or .com
+7. First and last name is accepting special characters
+8. Phone number - Spelling mistake
+9. Afhganisthan is displayed as Afganistam once we register
+10. Agree checkbox is unable to be clicked
+11. Able to submit without email filled
+12. Last name getting truncated 'Sample Last Name' -> 'Sample Last Nam'
+13. Phonenumber incrementing by 1 006655552442 -> 006655552443
+14. Succesfully registered is coming in red color same as error
+15. Phone Number being Alpha Numeric - Accepting Alphabets
+16. Accepting without Last Name which is mandatory
+17. Acceting without Email which is a mandatory field
+18. Phone number is having label - LastName
+19. Label Names are inconsistent - Last Name and Email address (Address)

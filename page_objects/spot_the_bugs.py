@@ -43,6 +43,10 @@ class SpotTheBugs:
     def submit_form(self):
         self.page.locator("//button[@id='registerBtn']").click()
 
+    def fill_and_submit(self):
+        self.fill_form()
+        self.submit_form()
+
     def validate_values_with_result(self):
         """
         Method to validate the success register comparisons
@@ -61,6 +65,7 @@ class SpotTheBugs:
         
     def validate_invalid_details(self):
         """
-        Method to validate if succes s not displayed when some information is wrongly written
+        Method to validate if success not displayed when some information is wrongly written
         """
         expect(self.page.get_by_text("Successfully registered the following information")).not_to_be_visible()
+    
